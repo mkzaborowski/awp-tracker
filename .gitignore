@@ -45,6 +45,8 @@ jspm_packages/
 output/
 temp/
 
+.DS_Store
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
