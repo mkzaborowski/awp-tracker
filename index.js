@@ -2,9 +2,10 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const { exec } = require("child_process");
+require("dotenv").config();
 
-const app = express();
-const port = 3000;
+const index = express();
+const port = process.env.PORT;
 
 function runParsersScript() {
   exec("node ./src/parser.js", (error, stdout, stderr) => {
@@ -35,7 +36,7 @@ function isWallStreetOpen() {
   return isOpen;
 }
 
-app.get("/awp_state", (req, res) => {
+index.get("/awp_state", (req, res) => {
   const filePath = path.join(__dirname, "/output/organized_data.json");
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
@@ -46,7 +47,7 @@ app.get("/awp_state", (req, res) => {
   });
 });
 
-app.listen(port, () => {
+index.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 
   // if (isWallStreetOpen()) {

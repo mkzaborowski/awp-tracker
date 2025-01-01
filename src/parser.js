@@ -3,13 +3,10 @@ const xlsx = require("xlsx");
 const fs = require("fs");
 const path = require("path");
 
+require("dotenv").config();
+
 // Helper function to convert Google Sheets HTML URL to export URL
 function convertToExportUrl(htmlUrl) {
-  const matches = htmlUrl.match(/d\/e\/([-\w]{50,})/);
-  if (!matches) {
-    throw new Error("Invalid Google Sheets URL format");
-  }
-  const docId = matches[1];
   return `https://docs.google.com/spreadsheets/d/e/2PACX-1vQT7uecuE4ONP7z6L71E1y9F0mWp-Wbs6MrXpBtJ20toZwZhUuo0MVI36ahr1jpEqJJi1hXMKTnseRI/pub?gid=1632040262&single=true&output=xlsx`;
 }
 
@@ -51,7 +48,6 @@ function findLastDataRow(worksheet, startColumn = "C", endColumn = "AC") {
     // For example, check for specific text patterns or formatting
     const firstCell = getCellValue("C", row);
     const secondCell = getCellValue("D", row);
-    console.log(firstCell, secondCell, row);
     return (
       firstCell &&
       typeof firstCell === "string" &&
@@ -64,10 +60,10 @@ function findLastDataRow(worksheet, startColumn = "C", endColumn = "AC") {
   };
 
   // Start from a reasonably high row number and work backwards
-  let row = 150; // Adjust this if your sheet might be larger
+  let row = JSON.parse(fs.readFileSync(`${__dirname}/../temp/xlsx_metadata.json`)).row + 50; // Adjust this if your sheet might be larger
   let lastDataRow = null;
   let consecutiveEmptyRows = 0;
-  const emptyRowThreshold = 100; // Stop after this many empty rows
+  const emptyRowThreshold = row; // Stop after this many empty rows
 
   while (row > 2) {
     // Don't go above the header row
@@ -78,6 +74,7 @@ function findLastDataRow(worksheet, startColumn = "C", endColumn = "AC") {
     if (isBottom) {
       row--;
       lastDataRow = row;
+      fs.writeFileSync(`${__dirname}/../temp/xlsx_metadata.json`, JSON.stringify({ row: lastDataRow }));
       break;
     }
 
@@ -98,7 +95,7 @@ function findLastDataRow(worksheet, startColumn = "C", endColumn = "AC") {
     row--;
   }
 
-  return lastDataRow || 63; // Fallback to 188 if no last row found
+  return lastDataRow; // Fallback to 188 if no last row found
 }
 
 function parseStackedTables(filePath) {
@@ -195,7 +192,7 @@ function parseStackedTables(filePath) {
         }
       });
 
-      if (hasData) {
+      if (hasData && (rowData["% of portfolio assets"] !== 0 || rowData["% of portfolio assets"] !== 0.00)) {
         tableData.push(rowData);
       }
 
@@ -203,6 +200,7 @@ function parseStackedTables(filePath) {
     }
 
     delete tableData[Object.keys(tableData)[Object.keys(tableData).length - 1]];
+
 
     return {
       startRow,
@@ -282,9 +280,7 @@ async function processGoogleSheet(sheetUrl) {
 module.exports = { processGoogleSheet };
 
 if (require.main === module) {
-  const sheetUrl =
-    "https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQT7uecuE4ONP7z6L71E1y9F0mWp-Wbs6MrXpBtJ20toZwZhUuo0MVI36ahr1jpEqJJi1hXMKTnseRI/pubhtml/sheet?headers=false&gid=1632040262";
-  processGoogleSheet(sheetUrl)
+  processGoogleSheet(process.env.SHEET_URL)
     .then((result) => {
       console.log("Tables found:", result.rawTables.length);
       console.log("Last data row:", result.metadata.lastRow);
