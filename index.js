@@ -8,7 +8,7 @@ const index = express();
 const port = process.env.PORT;
 
 function runParsersScript() {
-  exec("node ./src/parser.js", (error, stdout, stderr) => {
+  exec("node ./api/src/parser.js", (error, stdout, stderr) => {
     if (error) {
       console.error(`Error executing parsers.js: ${error.message}`);
       return;
@@ -37,7 +37,8 @@ function isWallStreetOpen() {
 }
 
 index.get("/awp_state", (req, res) => {
-  const filePath = path.join(__dirname, "/output/organized_data.json");
+  const filePath = path.join(__dirname, "/api/output/organized_data.json");
+
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       res.status(500).send("Error reading file");
