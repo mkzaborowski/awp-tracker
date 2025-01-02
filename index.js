@@ -3,9 +3,11 @@ const fs = require("fs");
 const path = require("path");
 const { exec } = require("child_process");
 require("dotenv").config();
+const cors = require('cors');
 
 const index = express();
 const port = process.env.PORT;
+index.use(cors());
 
 function runParsersScript() {
   exec("node ./api/src/parser.js", (error, stdout, stderr) => {
@@ -38,6 +40,18 @@ function isWallStreetOpen() {
 
 index.get("/awp_state", (req, res) => {
   const filePath = path.join(__dirname, "/api/output/organized_data.json");
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      res.status(500).send("Error reading file");
+      return;
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
+index.get("/awp_state2", (req, res) => {
+  const filePath = path.join(__dirname, "/api/output/organized_data2.json");
 
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
