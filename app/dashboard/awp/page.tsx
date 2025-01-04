@@ -34,6 +34,8 @@ const Dashboard = () => {
   const [data, setData] = useState(null);
   const [selectedSection, setSelectedSection] = useState("Section 1");
 
+
+
   useEffect(() => {
     // Replace with actual fetch
     const fetchData = async () => {
@@ -52,6 +54,21 @@ const Dashboard = () => {
     ...details[0],
     company: company.trim()
   }));
+
+  const ClickableTableRow = ({ children, ticker }) => {
+    const handleClick = () => {
+      window.open(`https://stooq.pl/q/?s=${ticker.trim()}.us`, '_blank');
+    };
+
+    return (
+        <TableRow
+            className="cursor-pointer hover:bg-gray-100 transition-colors"
+            onClick={handleClick}
+        >
+          {children}
+        </TableRow>
+    );
+  };
 
   return (
       <SidebarProvider>
@@ -126,7 +143,7 @@ const Dashboard = () => {
                     </TableHeader>
                     <TableBody>
                       {portfolioItems.map((item, index) => (
-                          <TableRow key={index}>
+                          <ClickableTableRow key={index} ticker={item.Ticker}>
                             <TableCell className="font-medium">{item.Company}</TableCell>
                             <TableCell>{item.Ticker}</TableCell>
                             <TableCell>{item.Shares.toLocaleString()}</TableCell>
@@ -145,7 +162,7 @@ const Dashboard = () => {
                                 className={item["Gain/Loss"] > 0 ? "text-green-600" : "text-red-600"}>
                               ${item["Gain/Loss"].toLocaleString()}
                             </TableCell>
-                          </TableRow>
+                          </ClickableTableRow>
                       ))}
                     </TableBody>
                   </Table>

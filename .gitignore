@@ -37,3 +37,7 @@ next-env.d.ts
 
 api/output
 .idea/
+
+node_modules/
+api/output/
+api/temp/

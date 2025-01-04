@@ -24,6 +24,7 @@ import {
     SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 interface CompanyData {
     "% of portfolio assets": number;
@@ -118,6 +119,21 @@ const Dashboard: React.FC = () => {
         }).format(value);
     };
 
+    const ClickableTableRow = ({ children, ticker }) => {
+        const handleClick = () => {
+            window.open(`https://stooq.pl/q/?s=${ticker.trim()}.us`, '_blank');
+        };
+
+        return (
+            <TableRow
+                className="cursor-pointer hover:bg-gray-100 transition-colors"
+                onClick={handleClick}
+            >
+                {children}
+            </TableRow>
+        );
+    };
+
     return (
         <SidebarProvider>
             <AppSidebar />
@@ -165,7 +181,8 @@ const Dashboard: React.FC = () => {
                                 </TableHeader>
                                 <TableBody>
                                     {calculations.map((calc, index) => (
-                                        <TableRow key={index}>
+
+                                        <ClickableTableRow key={index} ticker={calc.ticker}>
                                             <TableCell>{calc.section}</TableCell>
                                             <TableCell className="font-medium">{calc.company}</TableCell>
                                             <TableCell>{calc.ticker}</TableCell>
@@ -178,7 +195,8 @@ const Dashboard: React.FC = () => {
                                                 className={calc.investment - calc.targetInvestment > 0 ? "text-green-600" : "text-red-600"}>
                                                 {formatCurrency(calc.investment - calc.targetInvestment)}
                                             </TableCell>
-                                        </TableRow>
+                                        </ClickableTableRow>
+
                                     ))}
                                     {calculations.length > 0 && (
                                         <TableRow className="font-bold">
