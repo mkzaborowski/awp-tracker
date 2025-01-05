@@ -75,6 +75,17 @@ const Dashboard: React.FC = () => {
         fetchData();
     }, []);
 
+    const sectionColors = {
+        "Section 1": "bg-blue-50/50",
+        "Section 2": "bg-emerald-50/50",
+        "Section 3": "bg-amber-50/50",
+        "Section 4": "bg-rose-50/50",
+        "Section 5": "bg-purple-50/50",
+        "Section 6": "bg-cyan-50/50",
+        "Section 7": "bg-gray-50/50"
+
+    };
+
     const calculateInvestments = (amount: number) => {
         if (!portfolioData || !amount || !totalPortfolioValue) return [];
 
@@ -119,14 +130,14 @@ const Dashboard: React.FC = () => {
         }).format(value);
     };
 
-    const ClickableTableRow = ({ children, ticker }) => {
+    const ClickableTableRow = ({ children, ticker, className }) => {
         const handleClick = () => {
             window.open(`https://stooq.pl/q/?s=${ticker.trim()}.us`, '_blank');
         };
 
         return (
             <TableRow
-                className="cursor-pointer hover:bg-gray-100 transition-colors"
+                className={`cursor-pointer hover:bg-gray-100 transition-colors ${className}`}
                 onClick={handleClick}
             >
                 {children}
@@ -182,7 +193,7 @@ const Dashboard: React.FC = () => {
                                 <TableBody>
                                     {calculations.map((calc, index) => (
 
-                                        <ClickableTableRow key={index} ticker={calc.ticker}>
+                                        <ClickableTableRow key={index} ticker={calc.ticker} className={sectionColors[calc.section]}>
                                             <TableCell>{calc.section}</TableCell>
                                             <TableCell className="font-medium">{calc.company}</TableCell>
                                             <TableCell>{calc.ticker}</TableCell>
