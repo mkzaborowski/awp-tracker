@@ -10,7 +10,7 @@ const port = process.env.PORT;
 index.use(cors());
 
 function runParsersScript() {
-  exec("node ./api/src/parser.js", (error, stdout, stderr) => {
+  exec("node ./api/src/parser.ts", (error, stdout, stderr) => {
     if (error) {
       console.error(`Error executing parsers.js: ${error.message}`);
       return;
