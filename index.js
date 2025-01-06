@@ -10,7 +10,7 @@ const port = process.env.PORT;
 index.use(cors());
 
 function runParsersScript() {
-  exec("node ./api/src/parser.ts", (error, stdout, stderr) => {
+  exec("node ./unstaged-api/src/parser.ts", (error, stdout, stderr) => {
     if (error) {
       console.error(`Error executing parsers.js: ${error.message}`);
       return;
@@ -39,7 +39,7 @@ function isWallStreetOpen() {
 }
 
 index.get("/awp_state", (req, res) => {
-  const filePath = path.join(__dirname, "/api/output/organized_data.json");
+  const filePath = path.join(__dirname, "/unstaged-api/output/organized_data.json");
 
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
@@ -51,7 +51,7 @@ index.get("/awp_state", (req, res) => {
 });
 
 index.get("/awp_state2", (req, res) => {
-  const filePath = path.join(__dirname, "/api/output/organized_data2.json");
+  const filePath = path.join(__dirname, "/unstaged-api/output/organized_data2.json");
 
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {

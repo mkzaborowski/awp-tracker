@@ -41,3 +41,5 @@ api/output
 node_modules/
 api/output/
 api/temp/
+.env
+out/

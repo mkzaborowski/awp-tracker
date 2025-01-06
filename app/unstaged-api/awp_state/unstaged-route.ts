@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+/*import { NextResponse } from 'next/server';
 import { processGoogleSheet } from '@/app/utils/parser';
 
 export async function GET() {
@@ -11,3 +11,4 @@ export async function GET() {
         return NextResponse.json({ error: 'Failed to process sheet' }, { status: 500 });
     }
 }
+*/

@@ -24,19 +24,46 @@ import {
     SidebarTrigger,
 } from "@/components/ui/sidebar"
 
+interface CompanyData {
+    "% of portfolio assets": number;
+    "Company/Asset": string;
+    "Ticker": string;
+    "TT Score": number;
+    "Shares": number;
+    "Starting position + adds": number;
+    "Current position + adds/sales": number;
+    "Price at start/add ": number;
+    "Day Chng %": number;
+    "Current price": number;
+    "Price change": number;
+    "% Gain/loss ": number;
+    "Gain/Loss": number;
+    "Div Yield": number;
+}
+
+interface PortfolioData {
+    [section: string]: {
+        [company: string]: CompanyData[];
+    };
+}
+
+interface Portfolio {
+    [company: string]: CompanyData[];
+}
+
 const Dashboard = () => {
-    const [portfolio1, setPortfolio1] = useState(null);
-    const [portfolio2, setPortfolio2] = useState(null);
+    const [portfolio1, setPortfolio1] = useState<Portfolio | null>(null);
+    const [portfolio2, setPortfolio2] = useState<Portfolio | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
             // Replace with actual API endpoints
             const [response1, response2] = await Promise.all([
-                fetch('http://localhost:8080/awp_state'),
-                fetch('http://localhost:8080/awp_state2')
+                fetch('/api/state'),
+                fetch('/api/state')
             ]);
-            const data1 = await response1.json();
-            const data2 = await response2.json();
+            const data1 = await response1.json() as PortfolioData;
+            const data2 = await response2.json() as PortfolioData;
 
             setPortfolio1(data1["Section 1"]);
             setPortfolio2(data2["Section 1"]);

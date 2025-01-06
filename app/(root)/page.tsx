@@ -16,7 +16,7 @@ const HomePage = () => {
         <div className="min-h-screen flex flex-col">
             <main className="flex-grow flex flex-col items-center justify-center p-8">
                 <h1 className="text-6xl font-bold text-center mb-4">
-                    Welcome to Our Platform
+                    Welcome to AWP Tracker
                 </h1>
 
                 <div className="text-lg mb-8">
@@ -35,7 +35,7 @@ const HomePage = () => {
             </main>
 
             <footer className="bg-gray-100 py-4 text-center text-gray-600">
-                <p>&copy; 2025 Our Platform. All rights reserved.</p>
+                <p>&copy; 2025 mkz. All rights reserved.</p>
             </footer>
         </div>
     );

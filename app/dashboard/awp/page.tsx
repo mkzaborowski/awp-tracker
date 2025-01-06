@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import {useState, useEffect, ReactNode} from 'react';
 import {
   Card,
   CardContent,
@@ -39,7 +39,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Replace with actual fetch
     const fetchData = async () => {
-      const response = await fetch('http://localhost:8080/awp_state');
+      const response = await fetch('/api/state');
       const data = await response.json();
       setData(data);
     };
@@ -51,11 +51,12 @@ const Dashboard = () => {
   const sections = Object.keys(data);
   const currentSectionData = data[selectedSection];
   const portfolioItems = Object.entries(currentSectionData).map(([company, details]) => ({
-    ...details[0],
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    ...(details[0] as PortfolioDetails),
     company: company.trim()
   }));
-
-  const ClickableTableRow = ({ children, ticker }) => {
+  const ClickableTableRow = ({ children, ticker } : {children: ReactNode, ticker: string}) => {
     const handleClick = () => {
       window.open(`https://stooq.pl/q/?s=${ticker.trim()}.us`, '_blank');
     };

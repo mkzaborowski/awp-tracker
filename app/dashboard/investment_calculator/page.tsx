@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import {useState, useEffect, ReactNode} from 'react';
 import {
     Card,
     CardContent,
@@ -24,7 +24,6 @@ import {
     SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 
 interface CompanyData {
     "% of portfolio assets": number;
@@ -49,15 +48,27 @@ interface PortfolioData {
     };
 }
 
+interface Calculation {
+    section: string;
+    company: string;
+    ticker: string;
+    currentValue: number;
+    price: number;
+    portfolioPercentage: number;
+    sharesToBuy: number;
+    investment: number;
+    targetInvestment: number;
+}
+
 const Dashboard: React.FC = () => {
     const [portfolioData, setPortfolioData] = useState<PortfolioData | null>(null);
     const [investmentAmount, setInvestmentAmount] = useState<string>("");
-    const [calculations, setCalculations] = useState<any[]>([]);
+    const [calculations, setCalculations] = useState<Calculation[]>([]);
     const [totalPortfolioValue, setTotalPortfolioValue] = useState<number>(0);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('http://localhost:8080/awp_state');
+            const response = await fetch('/api/state');
             const data: PortfolioData = await response.json();
             setPortfolioData(data);
 
@@ -75,7 +86,7 @@ const Dashboard: React.FC = () => {
         fetchData();
     }, []);
 
-    const sectionColors = {
+    const sectionColors: {[key: string]: string} = {
         "Section 1": "bg-blue-50/50",
         "Section 2": "bg-emerald-50/50",
         "Section 3": "bg-amber-50/50",
@@ -83,7 +94,6 @@ const Dashboard: React.FC = () => {
         "Section 5": "bg-purple-50/50",
         "Section 6": "bg-cyan-50/50",
         "Section 7": "bg-gray-50/50"
-
     };
 
     const calculateInvestments = (amount: number) => {
@@ -130,7 +140,7 @@ const Dashboard: React.FC = () => {
         }).format(value);
     };
 
-    const ClickableTableRow = ({ children, ticker, className }) => {
+    const ClickableTableRow = ({ children, ticker, className }: {children: ReactNode, ticker: string, className: string}) => {
         const handleClick = () => {
             window.open(`https://stooq.pl/q/?s=${ticker.trim()}.us`, '_blank');
         };
@@ -191,8 +201,7 @@ const Dashboard: React.FC = () => {
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {calculations.map((calc, index) => (
-
+                                    {calculations.map((calc: Calculation, index: number) => (
                                         <ClickableTableRow key={index} ticker={calc.ticker} className={sectionColors[calc.section]}>
                                             <TableCell>{calc.section}</TableCell>
                                             <TableCell className="font-medium">{calc.company}</TableCell>
@@ -202,12 +211,10 @@ const Dashboard: React.FC = () => {
                                             <TableCell>{formatCurrency(calc.targetInvestment)}</TableCell>
                                             <TableCell>{calc.sharesToBuy.toLocaleString()}</TableCell>
                                             <TableCell>{formatCurrency(calc.investment)}</TableCell>
-                                            <TableCell
-                                                className={calc.investment - calc.targetInvestment > 0 ? "text-green-600" : "text-red-600"}>
+                                            <TableCell className={calc.investment - calc.targetInvestment > 0 ? "text-green-600" : "text-red-600"}>
                                                 {formatCurrency(calc.investment - calc.targetInvestment)}
                                             </TableCell>
                                         </ClickableTableRow>
-
                                     ))}
                                     {calculations.length > 0 && (
                                         <TableRow className="font-bold">
@@ -215,8 +222,7 @@ const Dashboard: React.FC = () => {
                                             <TableCell>{formatCurrency(calculations.reduce((sum, calc) => sum + calc.targetInvestment, 0))}</TableCell>
                                             <TableCell></TableCell>
                                             <TableCell>{formatCurrency(calculations.reduce((sum, calc) => sum + calc.investment, 0))}</TableCell>
-                                            <TableCell
-                                                className={calculations.reduce((sum, calc) => sum + (calc.investment - calc.targetInvestment), 0) > 0 ? "text-green-600" : "text-red-600"}>
+                                            <TableCell className={calculations.reduce((sum, calc) => sum + (calc.investment - calc.targetInvestment), 0) > 0 ? "text-green-600" : "text-red-600"}>
                                                 {formatCurrency(calculations.reduce((sum, calc) => sum + (calc.investment - calc.targetInvestment), 0))}
                                             </TableCell>
                                         </TableRow>
