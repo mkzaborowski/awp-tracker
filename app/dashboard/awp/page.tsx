@@ -39,7 +39,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Replace with actual fetch
     const fetchData = async () => {
-      const response = await fetch('/api/state');
+      const response = await fetch('http://98.67.165.93:8080/awpstate');
       const data = await response.json();
       setData(data);
     };

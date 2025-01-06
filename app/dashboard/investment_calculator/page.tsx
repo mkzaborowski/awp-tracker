@@ -68,7 +68,7 @@ const Dashboard: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('/api/state');
+            const response = await fetch('https://98.67.165.93:8080/awp_state');
             const data: PortfolioData = await response.json();
             setPortfolioData(data);
 
