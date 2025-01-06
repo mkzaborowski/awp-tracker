@@ -11,7 +11,7 @@ export async function GET() {
         });
 
         if (!response.ok) {
-            throw new Error(`API responded with status: ${response.status}`);
+            throw new Error(`API responded with status, eroryn: ${response.status}`);
         }
 
         const data = await response.json();
