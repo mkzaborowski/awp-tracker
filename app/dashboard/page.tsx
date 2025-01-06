@@ -59,8 +59,8 @@ const Dashboard = () => {
         const fetchData = async () => {
             // Replace with actual API endpoints
             const [response1, response2] = await Promise.all([
-                fetch('http://98.67.165.93:8080/awp_state'),
-                fetch('http://98.67.165.93:8080/awp_state')
+                fetch('https://98.67.165.93:8443/awp_state'),
+                fetch('https://98.67.165.93:8443/awp_state')
             ]);
             const data1 = await response1.json() as PortfolioData;
             const data2 = await response2.json() as PortfolioData;
