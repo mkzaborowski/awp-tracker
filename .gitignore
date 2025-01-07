@@ -43,3 +43,4 @@ api/output/
 api/temp/
 .env
 out/
+*.pem
