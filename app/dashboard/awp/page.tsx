@@ -147,7 +147,7 @@ const Dashboard = () => {
                           <ClickableTableRow key={index} ticker={item.Ticker}>
                             <TableCell className="font-medium">{item.Company}</TableCell>
                             <TableCell>{item.Ticker}</TableCell>
-                            <TableCell>{item.Shares.toLocaleString()}</TableCell>
+                            <TableCell>{item.Shares != undefined ? item.Shares.toLocaleString() : item["Coin/stock"].toLocaleString()}</TableCell>
                             <TableCell>
                               ${item["Current price"].toLocaleString(undefined, {minimumFractionDigits: 2})}
                             </TableCell>
