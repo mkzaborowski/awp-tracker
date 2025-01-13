@@ -52,7 +52,7 @@ interface Calculation {
     section: string;
     company: string;
     ticker: string;
-    currentValue: number;
+    dayChange: number;
     price: number;
     portfolioPercentage: number;
     sharesToBuy: number;
