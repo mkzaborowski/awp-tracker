@@ -106,6 +106,7 @@ const Dashboard: React.FC = () => {
                 const portfolioPercentage = (currentValue / totalPortfolioValue);
                 const allocatedAmount = amount * portfolioPercentage;
                 const sharesToBuy = Math.floor(allocatedAmount / companyData["Current price"]);
+                const dayChange = companyData["Day Chng %"];
                 const actualInvestment = sharesToBuy * companyData["Current price"];
 
                 return {
@@ -117,6 +118,7 @@ const Dashboard: React.FC = () => {
                     portfolioPercentage: portfolioPercentage * 100,
                     sharesToBuy,
                     investment: actualInvestment,
+                    dayChange: dayChange,
                     targetInvestment: allocatedAmount
                 };
             })
@@ -192,7 +194,7 @@ const Dashboard: React.FC = () => {
                                         <TableHead>Section</TableHead>
                                         <TableHead>Company</TableHead>
                                         <TableHead>Ticker</TableHead>
-                                        <TableHead>Current Value</TableHead>
+                                        <TableHead>Day Change</TableHead>
                                         <TableHead>Portfolio %</TableHead>
                                         <TableHead>Target Investment</TableHead>
                                         <TableHead>Shares to Buy</TableHead>
@@ -206,7 +208,8 @@ const Dashboard: React.FC = () => {
                                             <TableCell>{calc.section}</TableCell>
                                             <TableCell className="font-medium">{calc.company}</TableCell>
                                             <TableCell>{calc.ticker}</TableCell>
-                                            <TableCell>{formatCurrency(calc.currentValue)}</TableCell>
+                                            <TableCell className={calc.dayChange > 0 ? "text-green-600" : "text-red-600"}>
+                                                {calc.dayChange != undefined ? calc.dayChange + '%' : '-----'}</TableCell>
                                             <TableCell>{calc.portfolioPercentage.toFixed(2)}%</TableCell>
                                             <TableCell>{formatCurrency(calc.targetInvestment)}</TableCell>
                                             <TableCell>{calc.sharesToBuy.toLocaleString()}</TableCell>
