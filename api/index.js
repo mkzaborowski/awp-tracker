@@ -5,7 +5,8 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const https = require('https');
 const fs = require('fs');
-const { processGoogleSheet } = require('./src/parser');
+const cron = require('node-cron');
+const { saveHistoricData } = require('./src/saveHistory');
 
 dotenv.config();
 
@@ -34,9 +35,13 @@ app.get('/awp_state', async (req, res) => {
   }
 });
 
+// Schedule the task to run every 24 hours
+cron.schedule('0 0 * * *', saveHistoricData);
+
 // Start the HTTP server
 app.listen(httpPort, '0.0.0.0', () => {
   console.log(`HTTP server is running on http://0.0.0.0:${httpPort}`);
+  saveHistoricData();
 });
 
 // Check if SSL files are available, and start the HTTPS server if they are
