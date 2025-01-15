@@ -7,6 +7,7 @@ const https = require('https');
 const fs = require('fs');
 const cron = require('node-cron');
 const { saveHistoricData } = require('./src/saveHistory');
+const { processGoogleSheet } = require('./src/parser');
 
 dotenv.config();
 
