@@ -1,0 +1,56 @@
+services:
+  api:
+    image: dirmane/awp-tracker-api:arm
+    container_name: awp-tracker-api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql://postgres:${DB_PASSWORD}@db:5432/awp_tracker
+      - NODE_ENV=production
+      # Add other environment variables your API needs
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      # Adjust the port according to your API
+    networks:
+      - awp-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  db:
+    image: postgres:15-alpine
+    platform: linux/arm64
+    container_name: awp-tracker-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=awp_tracker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      # Add other PostgreSQL configurations if needed
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"  # Remove this in production if you don't need direct DB access
+    networks:
+      - awp-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  postgres_data:
+    name: awp-tracker-postgres-data
+
+networks:
+  awp-network:
+    name: awp-tracker-network
+    driver: bridge
