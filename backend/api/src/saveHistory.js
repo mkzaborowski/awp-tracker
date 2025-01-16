@@ -19,12 +19,22 @@ const saveHistoricData = async () => {
         const client = await pool.connect();
         try {
             await client.query('BEGIN');
+
+            // Create table if it doesn't exist
+            const createTableQuery = `
+                CREATE TABLE IF NOT EXISTS historic_data (
+                    date DATE PRIMARY KEY,
+                    data JSONB
+                );
+            `;
+            await client.query(createTableQuery);
+
             const insertQuery = `
-        INSERT INTO historic_data (date, data)
-        VALUES ($1, $2)
-        ON CONFLICT (date) DO UPDATE
-        SET data = EXCLUDED.data;
-`;
+                INSERT INTO historic_data (date, data)
+                VALUES ($1, $2)
+                ON CONFLICT (date) DO UPDATE
+                SET data = EXCLUDED.data;
+            `;
             await client.query(insertQuery, [timestamp, result.organizedData]);
             await client.query('COMMIT');
             console.log(`Historic data saved to PostgreSQL for date ${timestamp}`);
