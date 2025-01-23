@@ -44,3 +44,4 @@ api/temp/
 api/.env
 out/
 *.pem
+.idea
