@@ -9,11 +9,9 @@ services:
     environment:
       - DATABASE_URL=postgresql://postgres:${DB_PASSWORD}@db:5432/awp_tracker
       - NODE_ENV=production
-      # Add other environment variables your API needs
     ports:
       - "8080:8080"
       - "8443:8443"
-      # Adjust the port according to your API
     networks:
       - awp-network
     healthcheck:
