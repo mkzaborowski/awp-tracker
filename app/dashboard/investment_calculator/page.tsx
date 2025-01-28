@@ -63,12 +63,13 @@ interface Calculation {
 const Dashboard: React.FC = () => {
     const [portfolioData, setPortfolioData] = useState<PortfolioData | null>(null);
     const [investmentAmount, setInvestmentAmount] = useState<string>("");
+    const [companyName, setCompanyName] = useState<string>("");
     const [calculations, setCalculations] = useState<Calculation[]>([]);
     const [totalPortfolioValue, setTotalPortfolioValue] = useState<number>(0);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://98.67.165.93:8443/awp_state');
+            const response = await fetch('https://localhost:8443/awp_state');
             const data: PortfolioData = await response.json();
             setPortfolioData(data);
 
@@ -102,18 +103,18 @@ const Dashboard: React.FC = () => {
         const allCompanies = Object.entries(portfolioData).flatMap(([section, companies]) =>
             Object.entries(companies).map(([company, data]) => {
                 const companyData = data[0];
-                const currentValue = companyData["Starting position + adds"];
-                const portfolioPercentage = (currentValue / totalPortfolioValue);
+                const currentValue = companyData["Current price"];
+                const portfolioPercentage = companyData["% of portfolio assets"];
                 const allocatedAmount = amount * portfolioPercentage;
-                const sharesToBuy = Math.floor(allocatedAmount / companyData["Current price"]);
+                const sharesToBuy = Math.floor(allocatedAmount / currentValue);
                 const dayChange = companyData["Day Chng %"];
-                const actualInvestment = sharesToBuy * companyData["Current price"];
+                const actualInvestment = sharesToBuy * currentValue;
 
                 return {
                     section,
                     company: company.trim(),
                     ticker: companyData.Ticker,
-                    currentValue,
+                    currentValue: currentValue,
                     price: companyData["Current price"],
                     portfolioPercentage: portfolioPercentage * 100,
                     sharesToBuy,
@@ -127,11 +128,26 @@ const Dashboard: React.FC = () => {
         return allCompanies.sort((a, b) => b.portfolioPercentage - a.portfolioPercentage);
     };
 
+    const calculationSearchCompanies = (name: string) => {
+        if (!portfolioData || !investmentAmount) return [];
+
+        return calculations.filter((calc) => calc.company.toLowerCase().includes(name.toLowerCase()));
+    }
+
     const handleInvestmentChange = (value: string) => {
         setInvestmentAmount(value);
         const amount = parseFloat(value.replace(/[^0-9.]/g, ''));
         if (!isNaN(amount)) {
             setCalculations(calculateInvestments(amount));
+        }
+    };
+
+    const handleCompanySearch = (value: string) => {
+        setCompanyName(value);
+        if (value != "") {
+            setCalculations(calculationSearchCompanies(value));
+        } else {
+            setCalculations(calculateInvestments(parseFloat(investmentAmount)));
         }
     };
 
@@ -144,7 +160,7 @@ const Dashboard: React.FC = () => {
 
     const ClickableTableRow = ({ children, ticker, className }: {children: ReactNode, ticker: string, className: string}) => {
         const handleClick = () => {
-            window.open(`https://stooq.pl/q/?s=${ticker.trim()}.us`, '_blank');
+            window.open(`https://stocktwits.com/symbol/${ticker.trim()}`, '_blank');
         };
 
         return (
@@ -181,6 +197,13 @@ const Dashboard: React.FC = () => {
                             onChange={(e) => handleInvestmentChange(e.target.value)}
                             className="w-48"
                         />
+                        <Input
+                            type="text"
+                            placeholder="Company name"
+                            value={companyName}
+                            onChange={(e) => handleCompanySearch(e.target.value)}
+                            className="w-48"
+                        />
                     </div>
 
                     <Card>
@@ -194,6 +217,7 @@ const Dashboard: React.FC = () => {
                                         <TableHead>Section</TableHead>
                                         <TableHead>Company</TableHead>
                                         <TableHead>Ticker</TableHead>
+                                        <TableHead>Current Price</TableHead>
                                         <TableHead>Day Change</TableHead>
                                         <TableHead>Portfolio %</TableHead>
                                         <TableHead>Target Investment</TableHead>
@@ -208,6 +232,7 @@ const Dashboard: React.FC = () => {
                                             <TableCell>{calc.section}</TableCell>
                                             <TableCell className="font-medium">{calc.company}</TableCell>
                                             <TableCell>{calc.ticker}</TableCell>
+                                            <TableCell>{formatCurrency(calc.price)}</TableCell>
                                             <TableCell className={calc.dayChange > 0 ? "text-green-600" : "text-red-600"}>
                                                 {calc.dayChange != undefined ? calc.dayChange + '%' : '-----'}</TableCell>
                                             <TableCell>{calc.portfolioPercentage.toFixed(2)}%</TableCell>

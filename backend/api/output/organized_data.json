@@ -1,0 +1,982 @@
+{
+  "Section 1": {
+    "Google ": [
+      {
+        "% of portfolio assets": 0.01302977128,
+        "Company": "Google ",
+        "Ticker": "GOOG",
+        "TT Score": 7.8,
+        "Shares": 2000,
+        "Starting position + adds": 380880,
+        "Current position + adds/sales": 403800,
+        "Price at start/add ": 190.44,
+        "Day Chng %": 0,
+        "Current price": 201.9,
+        "Price change": 11.46,
+        "% Gain/loss ": 0.06017643352,
+        "Gain/Loss": 22920,
+        "Div Yield": 0.0011
+      }
+    ],
+    "Baidu ": [
+      {
+        "% of portfolio assets": 0.02509150607,
+        "Company": "Baidu ",
+        "Ticker": "BIDU ",
+        "TT Score": 7.9,
+        "Shares": 9000,
+        "Starting position + adds": 758790,
+        "Current position + adds/sales": 777600,
+        "Price at start/add ": 84.31,
+        "Day Chng %": 0,
+        "Current price": 86.4,
+        "Price change": 2.09,
+        "% Gain/loss ": 0.02478946744,
+        "Gain/Loss": 18810
+      }
+    ],
+    "Tesla *": [
+      {
+        "% of portfolio assets": 0.104955808,
+        "Company": "Tesla *",
+        "Ticker": "TSLA",
+        "TT Score": 8,
+        "Shares": 8000,
+        "Starting position + adds": 3230720,
+        "Current position + adds/sales": 3252640,
+        "Price at start/add ": 403.84,
+        "Day Chng %": 0,
+        "Current price": 406.58,
+        "Price change": 2.74,
+        "% Gain/loss ": 0.006784865293,
+        "Gain/Loss": 21920,
+        "CCD Income": 12700
+      }
+    ],
+    "AMD *": [
+      {
+        "% of portfolio assets": 0.09513088289,
+        "Company": "AMD *",
+        "Ticker": "AMD",
+        "TT Score": 8.1,
+        "Shares": 24000,
+        "Starting position + adds": 2898960,
+        "Current position + adds/sales": 2948160,
+        "Price at start/add ": 120.79,
+        "Day Chng %": 0,
+        "Current price": 122.84,
+        "Price change": 2.05,
+        "% Gain/loss ": 0.01697160361,
+        "Gain/Loss": 49200
+      }
+    ],
+    "AMD ": [
+      {
+        "% of portfolio assets": 0.007927573574,
+        "Company": "AMD ",
+        "Ticker": "AMD",
+        "TT Score": 8.1,
+        "Shares": 2000,
+        "Starting position + adds": 233200,
+        "Current position + adds/sales": 245680,
+        "Price at start/add ": 116.6,
+        "Day Chng %": 0,
+        "Current price": 122.84,
+        "Price change": 6.24,
+        "% Gain/loss ": 0.05351629503,
+        "Gain/Loss": 12480,
+        "Adds in quarter": "AMD"
+      }
+    ],
+    "Amazon *": [
+      {
+        "% of portfolio assets": 0.0151562248,
+        "Company": "Amazon *",
+        "Ticker": "AMZN",
+        "TT Score": 8,
+        "Shares": 2000,
+        "Starting position + adds": 438780,
+        "Current position + adds/sales": 469700,
+        "Price at start/add ": 219.39,
+        "Day Chng %": 0,
+        "Current price": 234.85,
+        "Price change": 15.46,
+        "% Gain/loss ": 0.07046811614,
+        "Gain/Loss": 30920
+      }
+    ],
+    "Palantir *": [
+      {
+        "% of portfolio assets": 0.02548517425,
+        "Company": "Palantir *",
+        "Ticker": "PLTR",
+        "TT Score": 7.8,
+        "Shares": 10000,
+        "Starting position + adds": 725000,
+        "Current position + adds/sales": 789800,
+        "Price at start/add ": 72.5,
+        "Day Chng %": 0,
+        "Current price": 78.98,
+        "Price change": 6.48,
+        "% Gain/loss ": 0.08937931034,
+        "Gain/Loss": 64800,
+        "CCD Income": -23000
+      }
+    ],
+    "Palantir ": [
+      {
+        "% of portfolio assets": 0.01274258712,
+        "Company": "Palantir ",
+        "Ticker": "PLTR",
+        "TT Score": 7.8,
+        "Shares": 5000,
+        "Starting position + adds": 334500,
+        "Current position + adds/sales": 394900,
+        "Price at start/add ": 66.9,
+        "Day Chng %": 0,
+        "Current price": 78.98,
+        "Price change": 12.08,
+        "% Gain/loss ": 0.180568012,
+        "Gain/Loss": 60400,
+        "Active CCD Info": "100% - 2/21/25, $80SP, $5.40P",
+        "CCD Income": 27000,
+        "Adds in quarter": "PLTR"
+      }
+    ],
+    "Nvidia *": [
+      {
+        "% of portfolio assets": 0.02761227312,
+        "Company": "Nvidia *",
+        "Ticker": "NVDA ",
+        "TT Score": 7.9,
+        "Shares": 6000,
+        "Starting position + adds": 805740,
+        "Current position + adds/sales": 855720,
+        "Price at start/add ": 134.29,
+        "Day Chng %": 0,
+        "Current price": 142.62,
+        "Price change": 8.33,
+        "% Gain/loss ": 0.06202993521,
+        "Gain/Loss": 49980,
+        "Div Yield": 0.0003
+      }
+    ],
+    "Nvidia ": [
+      {
+        "% of portfolio assets": 0.009204091038,
+        "Company": "Nvidia ",
+        "Ticker": "NVDA ",
+        "TT Score": 7.9,
+        "Shares": 2000,
+        "Starting position + adds": 264200,
+        "Current position + adds/sales": 285240,
+        "Price at start/add ": 132.1,
+        "Day Chng %": 0,
+        "Current price": 142.62,
+        "Price change": 10.52,
+        "% Gain/loss ": 0.07963663891,
+        "Gain/Loss": 21040,
+        "Adds in quarter": "NVDA"
+      }
+    ],
+    "Meta Platforms ": [
+      {
+        "% of portfolio assets": 0.01024505295,
+        "Company": "Meta Platforms ",
+        "Ticker": "META",
+        "TT Score": 7.9,
+        "Shares": 500,
+        "Starting position + adds": 292755,
+        "Current position + adds/sales": 317500,
+        "Price at start/add ": 585.51,
+        "Day Chng %": "#N/A",
+        "Current price": 635,
+        "Price change": 49.49,
+        "% Gain/loss ": 0.08452460248,
+        "Gain/Loss": 24745,
+        "Div Yield": 0.0035
+      }
+    ],
+    "Dell *": [
+      {
+        "% of portfolio assets": 0.0366982637,
+        "Company": "Dell *",
+        "Ticker": "DELL",
+        "TT Score": 8.1,
+        "Shares": 10000,
+        "Starting position + adds": 1152400,
+        "Current position + adds/sales": 1137300,
+        "Price at start/add ": 115.24,
+        "Day Chng %": 0.01,
+        "Current price": 113.73,
+        "Price change": -1.51,
+        "% Gain/loss ": -0.01310308921,
+        "Gain/Loss": -15100,
+        "Div Yield": 0.015
+      }
+    ],
+    "Dell ": [
+      {
+        "% of portfolio assets": 0.00733965274,
+        "Company": "Dell ",
+        "Ticker": "DELL",
+        "TT Score": 8.1,
+        "Shares": 2000,
+        "Starting position + adds": 219200,
+        "Current position + adds/sales": 227460,
+        "Price at start/add ": 109.6,
+        "Day Chng %": 0.01,
+        "Current price": 113.73,
+        "Price change": 4.13,
+        "% Gain/loss ": 0.03768248175,
+        "Gain/Loss": 8260,
+        "Adds in quarter": "DELL"
+      }
+    ],
+    "Salesforce *": [
+      {
+        "% of portfolio assets": 0.03016608247,
+        "Company": "Salesforce *",
+        "Ticker": "CRM",
+        "TT Score": 8,
+        "Shares": 2800,
+        "Starting position + adds": 936124,
+        "Current position + adds/sales": 934864,
+        "Price at start/add ": 334.33,
+        "Day Chng %": 0,
+        "Current price": 333.88,
+        "Price change": -0.45,
+        "% Gain/loss ": -0.001345975533,
+        "Gain/Loss": -1260,
+        "Div Yield": 0.0043
+      }
+    ],
+    "Zscaler": [
+      {
+        "% of portfolio assets": 0.009364301079,
+        "Company": "Zscaler",
+        "Ticker": "ZS",
+        "TT Score": 7.8,
+        "Shares": 1500,
+        "Starting position + adds": 270615,
+        "Current position + adds/sales": 290205,
+        "Price at start/add ": 180.41,
+        "Day Chng %": 0,
+        "Current price": 193.47,
+        "Price change": 13.06,
+        "% Gain/loss ": 0.07239066571,
+        "Gain/Loss": 19590
+      }
+    ],
+    "OKTA": [
+      {
+        "% of portfolio assets": 0.008601972336,
+        "Company": "OKTA",
+        "Ticker": "OKTA",
+        "TT Score": 7.8,
+        "Shares": 3000,
+        "Starting position + adds": 236400,
+        "Current position + adds/sales": 266580,
+        "Price at start/add ": 78.8,
+        "Day Chng %": 0,
+        "Current price": 88.86,
+        "Price change": 10.06,
+        "% Gain/loss ": 0.1276649746,
+        "Gain/Loss": 30180
+      }
+    ],
+    "Qualcomm *": [
+      {
+        "% of portfolio assets": 0.04442900319,
+        "Company": "Qualcomm *",
+        "Ticker": "QCOM",
+        "TT Score": 8,
+        "Shares": 8000,
+        "Starting position + adds": 1228960,
+        "Current position + adds/sales": 1376880,
+        "Price at start/add ": 153.62,
+        "Day Chng %": 0,
+        "Current price": 172.11,
+        "Price change": 18.49,
+        "% Gain/loss ": 0.120361932,
+        "Gain/Loss": 147920,
+        "Div Yield": 0.02
+      }
+    ],
+    "ASML Holdings": [
+      {
+        "% of portfolio assets": 0.01772111817,
+        "Company": "ASML Holdings",
+        "Ticker": "ASML",
+        "TT Score": 7.8,
+        "Shares": 750,
+        "Starting position + adds": 519810,
+        "Current position + adds/sales": 549187.5,
+        "Price at start/add ": 693.08,
+        "Day Chng %": 0,
+        "Current price": 732.25,
+        "Price change": 39.17,
+        "% Gain/loss ": 0.05651584233,
+        "Gain/Loss": 29377.5,
+        "Div Yield": 0.01
+      }
+    ],
+    "SentinelOne": [
+      {
+        "% of portfolio assets": 0.02989296711,
+        "Company": "SentinelOne",
+        "Ticker": "S",
+        "TT Score": 8,
+        "Shares": 40000,
+        "Starting position + adds": 888000,
+        "Current position + adds/sales": 926400,
+        "Price at start/add ": 22.2,
+        "Day Chng %": 0,
+        "Current price": 23.16,
+        "Price change": 0.96,
+        "% Gain/loss ": 0.04324324324,
+        "Gain/Loss": 38400
+      }
+    ],
+    "Snap Inc. ": [
+      {
+        "% of portfolio assets": 0.02811177995,
+        "Company": "Snap Inc. ",
+        "Ticker": "SNAP",
+        "TT Score": 7.9,
+        "Shares": 80000,
+        "Starting position + adds": 861600,
+        "Current position + adds/sales": 871200,
+        "Price at start/add ": 10.77,
+        "Day Chng %": -0.09,
+        "Current price": 10.89,
+        "Price change": 0.12,
+        "% Gain/loss ": 0.01114206128,
+        "Gain/Loss": 9600,
+        "CCD Income": 9000
+      }
+    ]
+  },
+  "Section 2": {
+    "Devon": [
+      {
+        "% of portfolio assets": 0.01160353084,
+        "Company": "Devon",
+        "Ticker": "DVN",
+        "TT Score": 7.7,
+        "Shares": 10000,
+        "Starting position + adds": 327300,
+        "Current position + adds/sales": 359600,
+        "Price at start/add ": 32.73,
+        "Day Chng %": 0,
+        "Current price": 35.96,
+        "Price change": 3.23,
+        "% Gain/loss ": 0.09868622059,
+        "Gain/Loss": 32300,
+        "Div Yield": 0.052
+      }
+    ],
+    "Schlumberger": [
+      {
+        "% of portfolio assets": 0.0136331807,
+        "Company": "Schlumberger",
+        "Ticker": "SLB",
+        "TT Score": 7.8,
+        "Shares": 10000,
+        "Starting position + adds": 383400,
+        "Current position + adds/sales": 422500,
+        "Price at start/add ": 38.34,
+        "Day Chng %": 0,
+        "Current price": 42.25,
+        "Price change": 3.91,
+        "% Gain/loss ": 0.101982264,
+        "Gain/Loss": 39100,
+        "Div Yield": 0.026
+      },
+      {
+        "% of portfolio assets": 0.006816590352,
+        "Company": "Schlumberger",
+        "Ticker": "SLB",
+        "TT Score": 7.8,
+        "Shares": 5000,
+        "Starting position + adds": 209500,
+        "Current position + adds/sales": 211250,
+        "Price at start/add ": 41.9,
+        "Day Chng %": 0,
+        "Current price": 42.25,
+        "Price change": 0.35,
+        "% Gain/loss ": 0.008353221957,
+        "Gain/Loss": 1750,
+        "Div Yield": 0.026,
+        "Adds in quarter": "SLB"
+      }
+    ],
+    "Hess Corp.": [
+      {
+        "% of portfolio assets": 0.01164870588,
+        "Company": "Hess Corp.",
+        "Ticker": "HES",
+        "TT Score": 7.7,
+        "Shares": 2500,
+        "Starting position + adds": 332525,
+        "Current position + adds/sales": 361000,
+        "Price at start/add ": 133.01,
+        "Day Chng %": 0,
+        "Current price": 144.4,
+        "Price change": 11.39,
+        "% Gain/loss ": 0.0856326592,
+        "Gain/Loss": 28475,
+        "Div Yield": 0.015
+      }
+    ]
+  },
+  "Section 3": {
+    "Regeneron": [
+      {
+        "% of portfolio assets": 0.007632209504,
+        "Company": "Regeneron",
+        "Ticker": "REGN",
+        "TT Score": 7.7,
+        "Shares": 350,
+        "Starting position + adds": 249315.5,
+        "Current position + adds/sales": 236526.5,
+        "Price at start/add ": 712.33,
+        "Day Chng %": 0,
+        "Current price": 675.79,
+        "Price change": -36.54,
+        "% Gain/loss ": -0.05129644968,
+        "Gain/Loss": -12789
+      }
+    ],
+    "Amgen ": [
+      {
+        "% of portfolio assets": 0.01333083064,
+        "Company": "Amgen ",
+        "Ticker": "AMGN",
+        "TT Score": 7.8,
+        "Shares": 1500,
+        "Starting position + adds": 390960,
+        "Current position + adds/sales": 413130,
+        "Price at start/add ": 260.64,
+        "Day Chng %": 0,
+        "Current price": 275.42,
+        "Price change": 14.78,
+        "% Gain/loss ": 0.05670656845,
+        "Gain/Loss": 22170,
+        "Div Yield": 0.033
+      }
+    ],
+    "Pfizer": [
+      {
+        "% of portfolio assets": 0.01010242891,
+        "Company": "Pfizer",
+        "Ticker": "PFE",
+        "TT Score": 7.8,
+        "Shares": 12000,
+        "Starting position + adds": 318360,
+        "Current position + adds/sales": 313080,
+        "Price at start/add ": 26.53,
+        "Day Chng %": 0,
+        "Current price": 26.09,
+        "Price change": -0.44,
+        "% Gain/loss ": -0.01658499812,
+        "Gain/Loss": -5280,
+        "Div Yield": 0.066
+      }
+    ]
+  },
+  "Section 4": {
+    "General Dynamics ": [
+      {
+        "% of portfolio assets": 0.008597132153,
+        "Company": "General Dynamics ",
+        "Ticker": "GD",
+        "TT Score": 7.7,
+        "Shares": 1000,
+        "Starting position + adds": 263490,
+        "Current position + adds/sales": 266430,
+        "Price at start/add ": 263.49,
+        "Day Chng %": 0.04,
+        "Current price": 266.43,
+        "Price change": 2.94,
+        "% Gain/loss ": 0.01115791871,
+        "Gain/Loss": 2940,
+        "Div Yield": 0.022
+      }
+    ],
+    "Lockheed Martin": [
+      {
+        "% of portfolio assets": 0.01282867784,
+        "Company": "Lockheed Martin",
+        "Ticker": "LMT",
+        "TT Score": 7.8,
+        "Shares": 800,
+        "Starting position + adds": 388752,
+        "Current position + adds/sales": 397568,
+        "Price at start/add ": 485.94,
+        "Day Chng %": 0,
+        "Current price": 496.96,
+        "Price change": 11.02,
+        "% Gain/loss ": 0.02267769684,
+        "Gain/Loss": 8816,
+        "Div Yield": 0.027
+      }
+    ],
+    "Northrop Grumman ": [
+      {
+        "% of portfolio assets": 0.01603778337,
+        "Company": "Northrop Grumman ",
+        "Ticker": "NOC",
+        "TT Score": 7.7,
+        "Shares": 1000,
+        "Starting position + adds": 469290,
+        "Current position + adds/sales": 497020,
+        "Price at start/add ": 469.29,
+        "Day Chng %": 0,
+        "Current price": 497.02,
+        "Price change": 27.73,
+        "% Gain/loss ": 0.0590892625,
+        "Gain/Loss": 27730,
+        "Div Yield": 0.018
+      }
+    ],
+    "L3 Harris ": [
+      {
+        "% of portfolio assets": 0.01411074538,
+        "Company": "L3 Harris ",
+        "Ticker": "LHX",
+        "TT Score": 7.8,
+        "Shares": 2000,
+        "Starting position + adds": 420560,
+        "Current position + adds/sales": 437300,
+        "Price at start/add ": 210.28,
+        "Day Chng %": 0,
+        "Current price": 218.65,
+        "Price change": 8.37,
+        "% Gain/loss ": 0.03980407076,
+        "Gain/Loss": 16740,
+        "Div Yield": 0.022
+      }
+    ]
+  },
+  "Section 5": {
+    "Mosaic ": [
+      {
+        "% of portfolio assets": 0.009102769885,
+        "Company": "Mosaic ",
+        "Ticker": "MOS",
+        "TT Score": 7.8,
+        "Shares": 10000,
+        "Starting position + adds": 245800,
+        "Current position + adds/sales": 282100,
+        "Price at start/add ": 24.58,
+        "Day Chng %": 0,
+        "Current price": 28.21,
+        "Price change": 3.63,
+        "% Gain/loss ": 0.1476810415,
+        "Gain/Loss": 36300
+      }
+    ],
+    "Intrepid Potash ": [
+      {
+        "% of portfolio assets": 0.006565707559,
+        "Company": "Intrepid Potash ",
+        "Ticker": "IPI",
+        "TT Score": 7.5,
+        "Shares": 7500,
+        "Starting position + adds": 164400,
+        "Current position + adds/sales": 203475,
+        "Price at start/add ": 21.92,
+        "Day Chng %": 0,
+        "Current price": 27.13,
+        "Price change": 5.21,
+        "% Gain/loss ": 0.2376824818,
+        "Gain/Loss": 39075
+      }
+    ],
+    "Cameco *": [
+      {
+        "% of portfolio assets": 0.02710502199,
+        "Company": "Cameco *",
+        "Ticker": "CCJ",
+        "TT Score": 8,
+        "Shares": 15000,
+        "Starting position + adds": 770850,
+        "Current position + adds/sales": 840000,
+        "Price at start/add ": 51.39,
+        "Day Chng %": -0.02,
+        "Current price": 56,
+        "Price change": 4.61,
+        "% Gain/loss ": 0.08970616852,
+        "Gain/Loss": 69150
+      }
+    ],
+    "Oklo ": [
+      {
+        "% of portfolio assets": 0.01129375916,
+        "Company": "Oklo ",
+        "Ticker": "OKLO",
+        "TT Score": 7.5,
+        "Shares": 10000,
+        "Starting position + adds": 212300,
+        "Current position + adds/sales": 350000,
+        "Price at start/add ": 21.23,
+        "Day Chng %": -0.12,
+        "Current price": 41.82,
+        "Sale price/strike price": 35,
+        "Price change": 20.59,
+        "% Gain/loss ": 0.6486104569,
+        "Gain/Loss": 137700,
+        "Active CCD Info": "100% - 2/21/25, $35SP, $2.44P",
+        "CCD Income": 37500
+      },
+      {
+        "% of portfolio assets": 0.0134944288,
+        "Company": "Oklo ",
+        "Ticker": "OKLO",
+        "TT Score": 7.5,
+        "Shares": 10000,
+        "Starting position + adds": 212300,
+        "Current position + adds/sales": 418200,
+        "Price at start/add ": 21.23,
+        "Day Chng %": -0.12,
+        "Current price": 41.82,
+        "Price change": 20.59,
+        "% Gain/loss ": 0.9698539802,
+        "Gain/Loss": 205900
+      }
+    ],
+    "Constellation ": [
+      {
+        "% of portfolio assets": 0.01121115338,
+        "Company": "Constellation ",
+        "Ticker": "CEG",
+        "TT Score": 7.8,
+        "Shares": 1000,
+        "Starting position + adds": 223710,
+        "Current position + adds/sales": 347440,
+        "Price at start/add ": 223.71,
+        "Day Chng %": 0,
+        "Current price": 347.44,
+        "Price change": 123.73,
+        "% Gain/loss ": 0.5530821152,
+        "Gain/Loss": 123730
+      }
+    ],
+    "Lithium Americas ": [
+      {
+        "% of portfolio assets": 0.005082191623,
+        "Company": "Lithium Americas ",
+        "Ticker": "LAC",
+        "TT Score": 7.7,
+        "Shares": 50000,
+        "Starting position + adds": 148500,
+        "Current position + adds/sales": 157500,
+        "Price at start/add ": 2.97,
+        "Day Chng %": -0.32,
+        "Current price": 3.15,
+        "Price change": 0.18,
+        "% Gain/loss ": 0.06060606061,
+        "Gain/Loss": 9000
+      },
+      {
+        "% of portfolio assets": 0.005082191623,
+        "Company": "Lithium Americas ",
+        "Ticker": "LAC",
+        "TT Score": 7.7,
+        "Shares": 50000,
+        "Starting position + adds": 172500,
+        "Current position + adds/sales": 157500,
+        "Price at start/add ": 3.45,
+        "Day Chng %": -0.32,
+        "Current price": 3.15,
+        "Price change": -0.3,
+        "% Gain/loss ": -0.08695652174,
+        "Gain/Loss": -15000,
+        "Adds in quarter": "LAC"
+      }
+    ],
+    "Albemarle ": [
+      {
+        "% of portfolio assets": 0.008592291971,
+        "Company": "Albemarle ",
+        "Ticker": "ALB",
+        "TT Score": 7.8,
+        "Shares": 3000,
+        "Starting position + adds": 258240,
+        "Current position + adds/sales": 266280,
+        "Price at start/add ": 86.08,
+        "Day Chng %": -0.05,
+        "Current price": 88.76,
+        "Price change": 2.68,
+        "% Gain/loss ": 0.031133829,
+        "Gain/Loss": 8040,
+        "Div Yield": 0.015
+      }
+    ]
+  },
+  "Section 6": {
+    "Physical Gold": [
+      {
+        "% of portfolio assets": 0.02224870555,
+        "Company/Asset": "Physical Gold",
+        "Ticker": "Gold",
+        "TT Score": 8.5,
+        "Shares": 250,
+        "Starting position + adds": 656000,
+        "Current position + adds/sales": 689500,
+        "Price at start/add ": 2624,
+        "Current price": 2758,
+        "Price change": 134,
+        "% Gain/loss ": 0.05106707317,
+        "Gain/Loss": 33500
+      }
+    ],
+    "Physical Silver": [
+      {
+        "% of portfolio assets": 0.009970775946,
+        "Company/Asset": "Physical Silver",
+        "Ticker": "Silver",
+        "TT Score": 8.4,
+        "Shares": 10000,
+        "Starting position + adds": 289000,
+        "Current position + adds/sales": 309000,
+        "Price at start/add ": 28.9,
+        "Current price": 30.9,
+        "Price change": 2,
+        "% Gain/loss ": 0.06920415225,
+        "Gain/Loss": 20000
+      }
+    ],
+    "Gold miner ETF ": [
+      {
+        "% of portfolio assets": 0.00918424629,
+        "Company/Asset": "Gold miner ETF ",
+        "Ticker": "GDX",
+        "TT Score": 7.9,
+        "Shares": 7500,
+        "Starting position + adds": 254325,
+        "Current position + adds/sales": 284625,
+        "Price at start/add ": 33.91,
+        "Day Chng %": 0,
+        "Current price": 37.95,
+        "Price change": 4.04,
+        "% Gain/loss ": 0.1191388971,
+        "Gain/Loss": 30300,
+        "Div Yield": 0.016
+      }
+    ],
+    "Junior Gold miner ETF": [
+      {
+        "% of portfolio assets": 0.00614767713,
+        "Company/Asset": "Junior Gold miner ETF",
+        "Ticker": "GDXJ",
+        "TT Score": 7.8,
+        "Shares": 4000,
+        "Starting position + adds": 171000,
+        "Current position + adds/sales": 190520,
+        "Price at start/add ": 42.75,
+        "Day Chng %": 0,
+        "Current price": 47.63,
+        "Price change": 4.88,
+        "% Gain/loss ": 0.1141520468,
+        "Gain/Loss": 19520,
+        "Div Yield": 0.026
+      }
+    ],
+    "Agnico Eagle Mines *": [
+      {
+        "% of portfolio assets": 0.02902173426,
+        "Company/Asset": "Agnico Eagle Mines *",
+        "Ticker": "AEM",
+        "TT Score": 7.9,
+        "Shares": 10000,
+        "Starting position + adds": 782100,
+        "Current position + adds/sales": 899400,
+        "Price at start/add ": 78.21,
+        "Day Chng %": 0,
+        "Current price": 89.94,
+        "Price change": 11.73,
+        "% Gain/loss ": 0.1499808209,
+        "Gain/Loss": 117300,
+        "Div Yield": 0.032
+      }
+    ],
+    "Newmont *": [
+      {
+        "% of portfolio assets": 0.0271308363,
+        "Company/Asset": "Newmont *",
+        "Ticker": "NEM",
+        "TT Score": 7.9,
+        "Shares": 20000,
+        "Starting position + adds": 744400,
+        "Current position + adds/sales": 840800,
+        "Price at start/add ": 37.22,
+        "Day Chng %": 0,
+        "Current price": 42.04,
+        "Price change": 4.82,
+        "% Gain/loss ": 0.1295002687,
+        "Gain/Loss": 96400,
+        "Div Yield": 0.027
+      }
+    ],
+    "Barrick Gold ": [
+      {
+        "% of portfolio assets": 0.01040961916,
+        "Company/Asset": "Barrick Gold ",
+        "Ticker": "GOLD",
+        "TT Score": 7.6,
+        "Shares": 20000,
+        "Starting position + adds": 310000,
+        "Current position + adds/sales": 322600,
+        "Price at start/add ": 15.5,
+        "Day Chng %": -2.6,
+        "Current price": 16.13,
+        "Price change": 0.63,
+        "% Gain/loss ": 0.04064516129,
+        "Gain/Loss": 12600,
+        "Div Yield": 0.0255
+      }
+    ],
+    "Pan American Silver ": [
+      {
+        "% of portfolio assets": 0.01446891888,
+        "Company/Asset": "Pan American Silver ",
+        "Ticker": "PAAS",
+        "TT Score": 7.9,
+        "Shares": 20000,
+        "Starting position + adds": 404400,
+        "Current position + adds/sales": 448400,
+        "Price at start/add ": 20.22,
+        "Day Chng %": 0,
+        "Current price": 22.42,
+        "Price change": 2.2,
+        "% Gain/loss ": 0.1088031652,
+        "Gain/Loss": 44000,
+        "Div Yield": 0.02
+      }
+    ],
+    "Hecla Mining ": [
+      {
+        "% of portfolio assets": 0.02745835531,
+        "Company/Asset": "Hecla Mining ",
+        "Ticker": "HL",
+        "TT Score": 7.8,
+        "Shares": 155000,
+        "Starting position + adds": 761050,
+        "Current position + adds/sales": 850950,
+        "Price at start/add ": 4.91,
+        "Day Chng %": 0,
+        "Current price": 5.49,
+        "Price change": 0.58,
+        "% Gain/loss ": 0.1181262729,
+        "Gain/Loss": 89900,
+        "Div Yield": 0.0045
+      }
+    ],
+    "B2Gold": [
+      {
+        "% of portfolio assets": 0.007744291997,
+        "Company/Asset": "B2Gold",
+        "Ticker": "BTG",
+        "TT Score": 7.7,
+        "Shares": 100000,
+        "Starting position + adds": 244000,
+        "Current position + adds/sales": 240000,
+        "Price at start/add ": 2.44,
+        "Day Chng %": 0,
+        "Current price": 2.4,
+        "Price change": -0.04,
+        "% Gain/loss ": -0.01639344262,
+        "Gain/Loss": -4000,
+        "Div Yield": 0.06
+      }
+    ],
+    "Gold/silver mining ETF": [
+      {
+        "% of portfolio assets": 0.006156712138,
+        "Company/Asset": "Gold/silver mining ETF",
+        "Ticker": "SLVP",
+        "TT Score": 7.8,
+        "Shares": 15000,
+        "Starting position + adds": 173100,
+        "Current position + adds/sales": 190800,
+        "Price at start/add ": 11.54,
+        "Day Chng %": 0,
+        "Current price": 12.72,
+        "Price change": 1.18,
+        "% Gain/loss ": 0.1022530329,
+        "Gain/Loss": 17700,
+        "Div Yield": 0.01
+      }
+    ]
+  },
+  "Section 7": {
+    "Bitcoin ": [
+      {
+        "% of portfolio assets": 0.009602922076,
+        "Coin": "Bitcoin ",
+        "Ticker": "BTCUSD",
+        "TT Score": 7.9,
+        "Coin/stock": 3,
+        "Starting position + adds": 281175,
+        "Current position + adds/sales": 297600,
+        "Price at start/add ": 93725,
+        "Current price": 99200,
+        "Price change": 5475,
+        "% Gain/loss ": 0.05841557749,
+        "Gain/Loss": 16425
+      }
+    ],
+    "Bitcoin Cash ": [
+      {
+        "% of portfolio assets": 0.006501978489,
+        "Coin": "Bitcoin Cash ",
+        "Ticker": "BCHUSD",
+        "TT Score": 7.7,
+        "Coin/stock": 500,
+        "Starting position + adds": 241500,
+        "Current position + adds/sales": 201500,
+        "Price at start/add ": 483,
+        "Current price": 403,
+        "Price change": -80,
+        "% Gain/loss ": -0.16563147,
+        "Gain/Loss": -40000,
+        "Adds in quarter": "BCH"
+      }
+    ],
+    "Polkadot ": [
+      {
+        "% of portfolio assets": 0.004533637607,
+        "Coin": "Polkadot ",
+        "Ticker": "DOTUSD",
+        "TT Score": 7.5,
+        "Coin/stock": 25000,
+        "Starting position + adds": 183250,
+        "Current position + adds/sales": 140500,
+        "Price at start/add ": 7.33,
+        "Current price": 5.62,
+        "Price change": -1.71,
+        "% Gain/loss ": -0.2332878581,
+        "Gain/Loss": -42750,
+        "Adds in quarter": "DOT"
+      }
+    ],
+    "Ethereum ": [
+      {
+        "% of portfolio assets": 0.004940212936,
+        "Coin": "Ethereum ",
+        "Ticker": "ETHUSD",
+        "TT Score": 7.8,
+        "Coin/stock": 50,
+        "Starting position + adds": 167000,
+        "Current position + adds/sales": 153100,
+        "Price at start/add ": 3340,
+        "Current price": 3062,
+        "Price change": -278,
+        "% Gain/loss ": -0.08323353293,
+        "Gain/Loss": -13900
+      }
+    ]
+  }
+}
