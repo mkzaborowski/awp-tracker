@@ -6,8 +6,8 @@ const morgan = require('morgan');
 const https = require('https');
 const fs = require('fs');
 const cron = require('node-cron');
-const { saveHistoricData } = require('./src/saveHistory');
-const { processGoogleSheet } = require('./src/parser')
+const { saveHistoricData, getHistoricData } = require('./src/History');
+const { processGoogleSheet } = require('./src/parser');
 
 dotenv.config();
 
@@ -27,22 +27,40 @@ app.use(express.json());
 // Define your /awp_state endpoint
 app.get('/awp_state', async (req, res) => {
   try {
-    const sheetUrl = process.env.SHEET_URL;
-    const result = await processGoogleSheet(sheetUrl);
-    res.json(result.organizedData);
+    let data = JSON.parse(fs.readFileSync(`${__dirname}/output/organized_data.json`));
+    res.json(data);
   } catch (error) {
-    console.error('Failed to process sheet:', error);
-    res.status(500).json({ error: 'Failed to process sheet' });
+    console.error('Error reading state data:', error);
+    res.status(500).json({ error: 'Failed to read state data' });
   }
 });
 
-// Schedule the task to run every 24 hours
-cron.schedule('0 0 * * *', saveHistoricData);
+app.get('/awp_history', async (req, res) => {
+  try {
+    console.log('Fetching historic data...');
+    let data = await getHistoricData();
+    console.log('Data fetched successfully');
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching historic data:', error);
+    res.status(500).json({ error: 'Failed to fetch historic data' });
+  }
+});
+
+// Schedule the task to run every 6 hours
+cron.schedule('0 */6 * * *', async () => {
+  try {
+    await processGoogleSheet(process.env.SHEET_URL);
+    await saveHistoricData();
+  } catch (error) {
+    console.error('Failed to process sheet:', error);
+  }
+});
 
 // Start the HTTP server
 app.listen(httpPort, '0.0.0.0', () => {
   console.log(`HTTP server is running on http://0.0.0.0:${httpPort}`);
-  saveHistoricData();
+  saveHistoricData().catch(error => console.error('Error saving historic data on startup:', error));
 });
 
 // Check if SSL files are available, and start the HTTPS server if they are

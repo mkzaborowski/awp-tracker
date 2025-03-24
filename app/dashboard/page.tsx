@@ -16,14 +16,6 @@ import {
     TableRow,
 } from "@/components/ui/table";
 
-import { AppSidebar } from "@/components/app-sidebar"
-import { Separator } from "@/components/ui/separator"
-import {
-    SidebarInset,
-    SidebarProvider,
-    SidebarTrigger,
-} from "@/components/ui/sidebar"
-
 interface CompanyData {
     "% of portfolio assets": number;
     "Company/Asset": string;
@@ -59,8 +51,8 @@ const Dashboard = () => {
         const fetchData = async () => {
             // Replace with actual API endpoints
             const [response1, response2] = await Promise.all([
-                fetch('https://98.67.165.93:8443/awp_state'),
-                fetch('https://98.67.165.93:8443/awp_state')
+                fetch('http://localhost:8080/awp_state'),
+                fetch('http://localhost:8080/awp_state')
             ]);
             const data1 = await response1.json() as PortfolioData;
             const data2 = await response2.json() as PortfolioData;
@@ -111,18 +103,8 @@ const Dashboard = () => {
     const comparisonData = comparePortfolios();
 
     return (
-        <SidebarProvider>
-            <AppSidebar />
-            <SidebarInset>
-                <header className="flex h-16 shrink-0 items-center gap-2 border-b">
-                    <div className="flex items-center gap-2 px-3">
-                        <SidebarTrigger/>
-                        <Separator orientation="vertical" className="mr-2 h-4"/>
-                    </div>
-                </header>
-                <div className="p-8 bg-gray-50 min-h-screen">
+        <div>
                     <h1 className="text-3xl font-bold text-gray-900 mb-6">Portfolio Comparison Analysis</h1>
-
                     <Card className="mb-6">
                         <CardHeader>
                             <CardTitle>Portfolio Comparison</CardTitle>
@@ -236,9 +218,7 @@ const Dashboard = () => {
                             </CardContent>
                         </Card>
                     </div>
-                </div>
-            </SidebarInset>
-        </SidebarProvider>
+        </div>
     );
 };
 
