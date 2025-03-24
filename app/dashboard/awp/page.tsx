@@ -22,13 +22,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { AppSidebar } from "@/components/app-sidebar"
-import { Separator } from "@/components/ui/separator"
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
@@ -39,7 +32,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Replace with actual fetch
     const fetchData = async () => {
-      const response = await fetch('https://localhost:8443/awp_state');
+      const response = await fetch('http://localhost:8080/awp_state');
       const data = await response.json();
       setData(data);
     };
@@ -72,16 +65,7 @@ const Dashboard = () => {
   };
 
   return (
-      <SidebarProvider>
-        <AppSidebar />
-        <SidebarInset>
-          <header className="flex h-16 shrink-0 items-center gap-2 border-b">
-            <div className="flex items-center gap-2 px-3">
-              <SidebarTrigger/>
-              <Separator orientation="vertical" className="mr-2 h-4"/>
-            </div>
-          </header>
-          <div className="p-8 bg-gray-50 min-h-screen">
+      <div>
             <div className="flex justify-between items-center mb-6">
               <h1 className="text-3xl font-bold text-gray-900">Portfolio Overview</h1>
               <Select value={selectedSection} onValueChange={setSelectedSection}>
@@ -171,9 +155,6 @@ const Dashboard = () => {
               </CardContent>
             </Card>
           </div>
-
-        </SidebarInset>
-      </SidebarProvider>
   );
 };
 

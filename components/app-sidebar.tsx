@@ -1,5 +1,5 @@
 import * as React from "react"
-import { GalleryVerticalEnd } from "lucide-react"
+import {GalleryVerticalEnd, Timer} from "lucide-react"
 
 import {
   Sidebar,
@@ -21,25 +21,30 @@ interface NavItem {
   isActive?: boolean;
 }
 
-// This is sample data.
+const timestamp = new Date().toLocaleString();
 const data = {
   navMain: [
     {
       title: "All Weather Portfolio",
-      url: `/dashboard`,
+      url: `/dashboard/awp`,
       items: [
         {
           title: "Home",
-          url: `/dashboard`,
+          url: `/dashboard/awp`,
           isActive: true,
         },
         {
-          title: "Porfel AWP",
-          url: "/dashboard/awp",
+          title: "Graphs",
+          url: "/dashboard/state-graph",
           isActive: false,
         },
         {
-          title: "Kalkulator Portfela",
+          title: "Compare",
+          url: "/dashboard",
+          isActive: false,
+        },
+        {
+          title: "Wallet Upscaler",
           url: "/dashboard/investment_calculator",
           isActive: false,
         },
@@ -61,7 +66,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   </div>
                   <div className="flex flex-col gap-0.5 leading-none">
                     <span className="font-semibold">AWP Tracker</span>
-                    <span className="">Marceli Zaborowski</span>
+                    <span className="">{timestamp}</span>
                   </div>
                 </a>
               </SidebarMenuButton>
